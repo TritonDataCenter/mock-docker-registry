@@ -1,0 +1,40 @@
+#!/usr/bin/env node
+
+var fs = require('fs');
+var path = require('path');
+
+var App = require('../lib/app');
+
+
+// ---- support functions
+
+// TODO: move this to a lib/config.js file and formalize.
+function loadConfigSync() {
+    var configPath = path.resolve(__dirname  + '/../etc/config.json');
+    var content = fs.readFileSync(configPath);
+    var config = JSON.parse(content);
+
+    // Some paths are relative to the config file, so the config file dir may
+    // be needed.
+    config._configDir = path.dirname(configPath);
+
+    return config;
+}
+
+
+// ---- mainline
+
+function main(argv) {
+    var app = new App({config: loadConfigSync()});
+    app.start(function (err) {
+        if (err) {
+            app.log.error(err, 'error starting app');
+            process.exitStatus = 1;
+            // TODO cmdln.main exit stuff, does dashdash have this?
+        } else {
+            app.log.info('app started');
+        }
+    });
+}
+
+main(process.argv);

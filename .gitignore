@@ -1,0 +1,8 @@
+/node_modules
+/tmp
+/npm-debug.log
+/etc/config.json
+/etc/*.pem
+.DS_Store
+yarn.lock
+/data

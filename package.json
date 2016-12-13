@@ -1,0 +1,33 @@
+{
+  "name": "mock-docker-registry",
+  "version": "0.1.0",
+  "description": "a URL shortener service for Manta",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:joyent/mock-docker-registry.git"
+  },
+  "keywords": [
+    "triton",
+    "docker",
+    "registry",
+    "mock"
+  ],
+  "author": "Joyent (joyent.com)",
+  "license": "MPL-2.0",
+  "homepage": "https://github.com/joyent/mock-docker-registry",
+  "dependencies": {
+    "assert-plus": "^1.0.0",
+    "bunyan": "^1.8.5",
+    "dashdash": "^1.14.0",
+    "docker-registry-client": "^3",
+    "once": "1.4.0",
+    "restify": "^4.3.0",
+    "vasync": "^1.6.4",
+    "verror": "^1.9.0"
+  },
+  "devDependencies": {
+    "eslint": "^1.10.3",
+    "nodemon": "^1.8.1"
+  }
+}

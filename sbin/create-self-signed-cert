@@ -1,0 +1,21 @@
+#!/bin/sh
+
+if [[ -n "$TRACE" ]]; then
+    export PS4='[\D{%FT%TZ}] ${BASH_SOURCE}:${LINENO}: ${FUNCNAME[0]:+${FUNCNAME[0]}(): }'
+    set -o xtrace
+fi
+set -o errexit
+set -o pipefail
+
+
+#---- globals
+
+TOP=$(cd $(dirname $0)/../; pwd)
+
+
+#---- mainline
+
+echo "Creating mock-docker-registry self-signed cert in $TOP/etc (1 year expiry)"
+openssl req -x509 -nodes -subj '/CN=*' -newkey rsa:4096 \
+    -keyout $TOP/etc/key.pem \
+    -out $TOP/etc/cert.pem -days 365
