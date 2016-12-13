@@ -5,7 +5,6 @@
         "array-bracket-spacing": [2, "never"],
         "block-scoped-var": 2,
         "brace-style": 2,
-        "callback-return": [2, ["callback", "cb", "next"]],
         "comma-dangle": [ 2, "never" ],
         "comma-spacing": [2, {"before": false, "after": true}],
         "comma-style": [2, "last"],
@@ -31,7 +30,6 @@
         "max-nested-callbacks": [2, 5],
         "max-len": [2, 80, 8, {"ignoreUrls": true}],
         "new-parens": 2,
-        "newline-after-var": [2, "always"],
         "no-array-constructor": 2,
         "no-case-declarations": 2,
         "no-cond-assign": [ 2, "always" ],
@@ -40,7 +38,6 @@
         "no-dupe-args": 2,
         "no-dupe-keys": 2,
         "no-duplicate-case": 2,
-        "no-else-return": 2,
         "no-empty": 2,
         "no-empty-label": 2,
         "no-empty-pattern": 2,
@@ -64,8 +61,6 @@
         "no-multi-spaces": [2, { exceptions: { "Property": false } }],
         "no-multiple-empty-lines": [2, {"max": 2}],
         "no-multi-str": 2,
-        "no-negated-condition": 2,
-        "no-nested-ternary": 2,
         "no-new": 2,
         "no-new-func": 2,
         "no-new-object": 2,
@@ -82,7 +77,6 @@
         "no-throw-literal": 2,
         "no-trailing-spaces": 2,
         "no-undef-init": 2,
-        "no-undefined": 2,
         "no-unneeded-ternary": 2,
         "no-unused-expressions": 2,
         "no-unused-vars": 2,
@@ -119,4 +113,3 @@
     },
     "extends": "eslint:recommended"
 }
-
