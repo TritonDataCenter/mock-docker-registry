@@ -26,7 +26,6 @@
         "indent": [ 2, 4 ],
         "key-spacing": [2, {"beforeColon": false, "afterColon": true}],
         "linebreak-style": [ 2, "unix" ],
-        "lines-around-comment": [2, { "beforeBlockComment": true, "allowBlockStart": true }],
         "max-nested-callbacks": [2, 5],
         "max-len": [2, 80, 8, {"ignoreUrls": true}],
         "new-parens": 2,

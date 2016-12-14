@@ -1,0 +1,7 @@
+- move config loading from bin/mockdockregd to lib/config.js (see imgapi's)
+- better exit handling in mockdockregd a la cmdln.main
+- V2GetBlob:
+    - cache headers and conditional request handling E.g. from IMGAPI:
+      resSetImageFileCacheHeaders, restify.conditionalRequest().
+    - Range gets
+

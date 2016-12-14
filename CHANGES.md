@@ -2,7 +2,9 @@
 
 ## not yet released
 
-(nothing yet)
+- Move config loading to a module. Put defaults in "etc/defaults.json" and
+  no longer require a separate config file (still defaults to "etc/config.json").
+  Change default config to only listen on 127.0.0.1.
 
 ## 0.1.0
 

@@ -1,38 +1,28 @@
 #!/usr/bin/env node
 
-var fs = require('fs');
-var path = require('path');
-
 var App = require('../lib/app');
+var mod_config = require('../lib/config');
 
-
-// ---- support functions
-
-function loadConfigSync() {
-    var configPath = path.resolve(__dirname + '/../etc/config.json');
-    var content = fs.readFileSync(configPath);
-    var config = JSON.parse(content);
-
-    // Some paths are relative to the config file, so the config file dir may
-    // be needed.
-    config._configDir = path.dirname(configPath);
-
-    return config;
-}
-
-
-// ---- mainline
 
 function main() {
-    var app = new App({config: loadConfigSync()});
+    mod_config.loadConfig({}, function configLoaded(configErr, config) {
+        var app;
 
-    app.start(function appStarted(err) {
-        if (err) {
-            app.log.error(err, 'error starting app');
+        if (configErr) {
+            app.log.error(configErr, 'error loading config');
             process.exitStatus = 1;
-        } else {
-            app.log.info('app started');
+            return;
         }
+
+        app = new App({config: config});
+        app.start(function appStarted(err) {
+            if (err) {
+                app.log.error(err, 'error starting app');
+                process.exitStatus = 1;
+            } else {
+                app.log.info('app started');
+            }
+        });
     });
 }
 
